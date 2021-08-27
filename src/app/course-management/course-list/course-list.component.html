@@ -1,0 +1,48 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Title</th>
+          <th scope="col">Short Description</th>
+          <th scope="col">Full Description</th>
+          <th scope="col">Requirements</th>
+          <th scope="col">Language</th>
+          <th scope="col">Category</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let course of courses; let i = index" [attr.data-index]="i">
+          <td>{{ i + 1 }}</td>
+          <td>{{ course.title }}</td>
+          <td>{{ course.shortDescription }}</td>
+          <td>{{ course.fullDescription }}</td>
+          <td>{{ course.requirements }}</td>
+          <td>{{ course.language }}</td>
+          <td>{{ course.categoryId }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<mat-grid-list cols="4" rowHeight="1:2" gutterSize="50px">
+  <mat-grid-tile *ngFor="let course of courses; let i = index" [attr.data-index]="i">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>{{ course.title }}</mat-card-title>
+        <mat-card-subtitle>{{ course.shortDescription }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="https://www.vinsguru.com/wp-content/uploads/2019/10/spring-boot-header.png" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+          {{ course.fullDescription }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>{{ course.categoryId }}</button>
+        <button mat-button>{{ course.language }}</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
