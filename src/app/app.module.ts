@@ -19,7 +19,7 @@ import { FooterComponent } from './footer/footer.component';
 import { CourseListComponent } from './course-management/course-list/course-list.component';
 import { CourseService } from 'src/api/api/course.service';
 import { HttpClientModule } from '@angular/common/http';
-
+import { CourseDetailComponent } from './course-management/course-detail/course-detail.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     CourseListComponent,
+    CourseDetailComponent,
   ],
   imports: [
     BrowserModule,

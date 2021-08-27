@@ -1,5 +1,5 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" [ngClass]="{hidden: !(isHandset$ | async)}"
+  <mat-sidenav #drawer class="sidenav" position="end" [ngClass]="{hidden: !(isHandset$ | async)}"
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
@@ -15,10 +15,10 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Virtual Learning Platform</span>
+      <span routerLink="/">Virtual Learning Platform</span>
       <span class="spacer"></span>
       <div [ngClass]="{hidden: (isHandset$ | async)}">
-        <a href="#">All Courses</a>
+        <a routerLink="/courses">All Courses</a>
         <a href="#">My Learnings</a>
         <a href="#">Logout</a>
       </div>
